@@ -1,0 +1,24 @@
+digraph SymbolicRiskEngine {
+  rankdir=TB;
+  node [shape=box, style=filled, fillcolor="#f0f4ff", fontname="Arial"];
+  edge [fontname="Arial"];
+
+  user [label="Quant Researcher / User\n(YAML/DSL)", fillcolor="#e0e0e0"];
+  yaml [label="YAML Contract + Risk YAML"];
+  converter [label="YAML→MLIR Converter\n(yaml_to_mlir.py)"];
+  mlir [label="Symbolic MLIR Risk DSL\n(contract.call, risk.compute)"];
+  lowering [label="MLIR Lowering Passes\n(LowerContracts.cpp, RiskAutodiff.cpp)"];
+  lowered_mlir [label="Lowered MLIR\n(MC kernels, adjoint/Greeks, scenario grid)"];
+  llvm [label="MLIR→LLVM IR→Native Code"];
+  runtime [label="Runtime (shock_engine.cpp)\n(Scenario execution, P&L, Greeks)"];
+  output [label="Output (CSV/Arrow)\n(Scenario grid, risk metrics, P&L)"];
+
+  user -> yaml;
+  yaml -> converter;
+  converter -> mlir;
+  mlir -> lowering;
+  lowering -> lowered_mlir;
+  lowered_mlir -> llvm;
+  llvm -> runtime;
+  runtime -> output;
+}
