@@ -1,0 +1,18 @@
+# Build and IDE artifacts
+/build/
+CMakeFiles/
+CMakeCache.txt
+*.o
+*.obj
+*.exe
+*.out
+*.log
+*.pyc
+__pycache__/
+*.swp
+*.swo
+*.DS_Store
+*.user
+*.vs/
+.idea/
+.vscode/
