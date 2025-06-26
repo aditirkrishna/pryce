@@ -13,6 +13,23 @@
 
 ---
 
+## Elite Example: Variance Reduction in Monte Carlo Simulation
+
+Pryce supports advanced variance reduction strategies for Monte Carlo simulation, used by real quant desks to achieve accurate pricing with fewer paths:
+
+- **Antithetic Variates**: Simulate pairs of paths with opposite random draws for lower variance.
+- **Control Variates**: Use analytical prices (e.g., Black-Scholes) to adjust MC results for hard-to-simulate payoffs.
+- **Importance Sampling**: Shift probability measures to sample rare, impactful regions more efficiently.
+
+**Why it matters:**
+- Demonstrates deep quant knowledge (variance convergence)
+- Shows compiler control over simulation mechanics
+- Bridges numerical finance and compiler IR execution
+
+**See full example and results:** [`examples/variance_reduction/`](examples/variance_reduction/)
+
+---
+
 ## Project Architecture
 
 ```mermaid
@@ -91,6 +108,12 @@ For full details, see `steps.md` and each example's README.
     - Output: scenario P&L, Delta, Gamma, Vega, shocked results
 - **Why it matters:** This is the infrastructure used by top HFT/quant firms for large-scale scenario and risk management.
 
+### 5. Monte Carlo Variance Reduction (examples/variance_reduction/)
+- **What:** Advanced variance reduction strategies for Monte Carlo simulation, used by real quant desks to achieve accurate pricing with fewer paths:
+    - **Antithetic Variates**: Simulate pairs of paths with opposite random draws for lower variance.
+    - **Control Variates**: Use analytical prices (e.g., Black-Scholes) to adjust MC results for hard-to-simulate payoffs.
+    - **Importance Sampling**: Shift probability measures to sample rare, impactful regions more efficiently.
+- **Why it matters:** Demonstrates deep quant knowledge (variance convergence) and shows compiler control over simulation mechanics.
 ---
 
 ## Directory Structure (Highlights)
@@ -120,7 +143,5 @@ Pryce is designed for clarity, extensibility, and performance. Whether you’re 
 - Build the next generation of quant finance infrastructure
 
 ---
-
 <p align="center"><i>ready to price, risk, and innovate? welcome to Pryce.</i></p>
-
 <p align="center"><i>built with ❤️ by aditi ramakrishnan</i></p>

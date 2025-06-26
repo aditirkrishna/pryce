@@ -1,0 +1,16 @@
+func.func @price_call_with_control_variate() -> f64 {
+  %spot = const.f64 100.0
+  %vol = const.f64 0.2
+  %rate = const.f64 0.05
+  %expiry = const.f64 1.0
+  %strike = const.f64 100.0
+  %npaths = const.i32 50000
+  %bs_value = const.f64 10.45  // Precomputed Black-Scholes price
+
+  %paths = derivlab.simulate_gbm %spot, %vol, %rate, %expiry, %npaths : ...
+  %payoffs = derivlab.payoff_call %paths, %strike : ...
+  %adj = derivlab.apply_control_variate %payoffs, %bs_value : ...
+  %avg = derivlab.average %adj : ...
+  %price = derivlab.discount %avg, %rate, %expiry : ...
+  return %price : f64
+}

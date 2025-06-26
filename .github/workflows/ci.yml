@@ -19,3 +19,13 @@ jobs:
       - name: Build
         run: |
           cmake --build build
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Ensure test script is executable
+        run: chmod +x scripts/test_pipeline.sh
+      - name: Run integration tests
+        run: bash scripts/test_pipeline.sh
