@@ -1,0 +1,6 @@
+spot: 100.0
+strike: 105.0
+volatility: 0.2
+rate: 0.05
+expiry: 1.0
+paths: 100000
