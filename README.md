@@ -121,6 +121,6 @@ Pryce is designed for clarity, extensibility, and performance. Whether you’re 
 
 ---
 
-**ready to price, risk, and innovate? welcome to Pryce.**
+<p align="center"><i>ready to price, risk, and innovate? welcome to Pryce.</i></p>
 
-<p align="center"><i>built with excessive amounts of caffeine by aditi ramakrishnan</i></p>
+<p align="center"><i>built with ❤️ by aditi ramakrishnan</i></p>
