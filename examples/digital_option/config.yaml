@@ -1,0 +1,7 @@
+spot: 100.0
+strike: 100.0
+volatility: 0.25
+rate: 0.03
+expiry: 1.0
+paths: 50000
+payout: 1.0
