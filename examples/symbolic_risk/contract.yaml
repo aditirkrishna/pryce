@@ -1,0 +1,16 @@
+# YAML contract definition for symbolic risk engine example
+contract:
+  name: digital_call
+  asset: SPX
+  type: digital
+  strike: 4200.0
+  payout: 10.0
+  expiry: 0.5
+risk:
+  greeks:
+    - delta
+    - gamma
+    - vega
+  scenarios:
+    - { spot: +0.01 }
+    - { vol: -0.01 }
