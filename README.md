@@ -123,4 +123,4 @@ Pryce is designed for clarity, extensibility, and performance. Whether you’re 
 
 **ready to price, risk, and innovate? welcome to Pryce.**
 
-<i></center>built with excessive amounts of caffeine by aditi ramakrishnan</center></i>
+<p align="center"><i>built with excessive amounts of caffeine by aditi ramakrishnan</i></p>
